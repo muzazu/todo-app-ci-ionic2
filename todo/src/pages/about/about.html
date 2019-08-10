@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>
+      About
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only color="royal" (click)="logout()">
+        <ion-icon name="log-out"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+	<ion-card>
+
+	  <ion-card-header>
+	    Profil Pengajar
+	  </ion-card-header>
+
+	  <ion-card-content>
+	  	<ion-list>
+		  <ion-item>
+		  	<h2>Nama</h2>
+		  	<p>{{listMatkul.nama}}</p>
+		  </ion-item>
+		</ion-list>
+	  	<ion-list>
+		  <ion-item>
+		  	<h2>Email</h2>
+		  	<p>{{listMatkul.email}}</p>
+		  </ion-item>
+		</ion-list>
+	  	<ion-list>
+		  <ion-item>
+		  	<h2>Telp</h2>
+		  	<p>{{listMatkul.telp}}</p>
+		  </ion-item>
+		</ion-list>
+	  	<ion-list>
+		  <ion-item>
+		  	<h2>Alamat</h2>
+		  	<p>{{listMatkul.alamat}}</p>
+		  </ion-item>
+		</ion-list>
+	  </ion-card-content>
+
+	</ion-card>
+</ion-content>

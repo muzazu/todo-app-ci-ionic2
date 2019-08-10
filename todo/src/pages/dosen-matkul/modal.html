@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-buttons start>
+      <button ion-button icon-only (click)="dismiss()">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+
+    <ion-title>
+      Tambah Kelompok
+    </ion-title>
+
+    <ion-buttons end>
+      <button ion-button icon-only (click)="save()">
+        <ion-icon name="checkmark"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label stacked>Nama Kelompok</ion-label>
+      <ion-input [(ngModel)]="nama" type="text"></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <ion-list>
+    <ion-list-header>
+      Minimum 
+      <ion-badge color="primary" item-right>{{min}}</ion-badge>
+    </ion-list-header>
+    <ion-item>
+      <ion-range [(ngModel)]="min" min="1" max="20" step="1">
+        <ion-icon range-left small name="person"></ion-icon>
+        <ion-icon range-right name="people"></ion-icon>
+      </ion-range>
+    </ion-item>
+  </ion-list>
+
+  <ion-list>
+    <ion-list-header>
+      Maksimum 
+      <ion-badge color="primary" item-right>{{max}}</ion-badge>
+    </ion-list-header>
+    <ion-item>
+      <ion-range [(ngModel)]="max" min="{{min}}" max="20" step="1">
+        <ion-icon range-left small name="person"></ion-icon>
+        <ion-icon range-right name="people"></ion-icon>
+      </ion-range>
+    </ion-item>
+  </ion-list>
+</ion-content>

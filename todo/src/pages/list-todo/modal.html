@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-buttons start>
+      <button ion-button icon-only (click)="dismiss()">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+
+    <ion-title>
+      Tambah Anggota
+    </ion-title>
+
+    <ion-buttons end>
+      <button ion-button icon-only (click)="save()">
+        <ion-icon name="checkmark"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-searchbar
+    [(ngModel)]="myInput"
+    [showCancelButton]="shouldShowCancel"
+    (ionInput)="setFilteredItems()">
+  </ion-searchbar>
+
+  <ion-list *ngIf="search == true">
+    <button ion-item *ngFor="let item of items" (click)="showConfirm(item.id,item.nama)">
+      <ion-icon name="person" item-left></ion-icon>
+      {{item.nama}}
+    </button>
+  </ion-list>
+  
+  <ion-item>
+    <ion-label color="primary" stacked>Ditujukan kepada</ion-label>
+    <ion-input hidden type="text" [(ngModel)]="idmhs"></ion-input>
+    <ion-input type="text" placeholder="nama..." [(ngModel)]="mhs"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label color="primary" stacked>Judul</ion-label>
+    <ion-input type="text" placeholder="judul..." [(ngModel)]="title"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label color="primary" stacked>Deadline</ion-label>
+    <ion-datetime displayFormat="YYYY-MM-DD" [(ngModel)]="deadline"></ion-datetime>
+  </ion-item>
+
+  <ion-item>
+    <ion-label color="primary" stacked>Deskripsi</ion-label>
+    <ion-textarea rows="6" placeholder="enter long description here..." [(ngModel)]="desc"></ion-textarea>
+  </ion-item>
+
+
+</ion-content>

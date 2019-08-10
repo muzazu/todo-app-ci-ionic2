@@ -1,0 +1,38 @@
+<!--
+  Generated template for the Todo page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="secondary">
+    <ion-title>Beranda</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+<ion-card>
+
+  <ion-card-content *ngIf="todos">
+    <ion-list>
+	  <ion-item>
+	     <ion-icon name="person" item-left></ion-icon>
+	    <h2>{{todos.nama}}</h2>
+	    <p><ion-icon name="list-box"></ion-icon> {{userArray}}</p>
+	  </ion-item>
+	</ion-list>
+  </ion-card-content>
+
+</ion-card>
+
+<ion-list inset  *ngIf="matkul && matkul.length > 0">
+  <button ion-item *ngFor="let todo of matkul" (click)="showMatkul(todo.idgroup)">
+    <ion-icon name="book" item-left></ion-icon>
+    {{todo.nama}}
+    <ion-icon name="arrow-dropright" md="ios-arrow-dropright" item-right></ion-icon>
+  </button>
+</ion-list>
+</ion-content>

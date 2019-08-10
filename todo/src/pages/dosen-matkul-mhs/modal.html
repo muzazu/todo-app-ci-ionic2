@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-buttons start>
+      <button ion-button icon-only (click)="dismiss()">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+
+    <ion-title>
+      Tambah Anggota
+    </ion-title>
+
+    <ion-buttons end>
+      <button ion-button icon-only (click)="save()">
+        <ion-icon name="checkmark"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-searchbar
+    [(ngModel)]="myInput"
+    [showCancelButton]="shouldShowCancel"
+    (ionInput)="setFilteredItems()">
+  </ion-searchbar>
+
+  <ion-list>
+    <button ion-item *ngFor="let item of items" (click)="showConfirm(item.id)">
+      <ion-icon name="person" item-left></ion-icon>
+      {{item.nama}}
+    </button>
+  </ion-list>
+</ion-content>
